@@ -1,0 +1,108 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+
+.container{
+  max-width: 500px;
+  padding: 0 20px;
+  margin-top: 20px;
+}
+.container .outer-tab,
+.container .inner-tab{
+  margin-bottom: 8px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.18);
+}
+.container .outer-tab label,
+.container .inner-tab label{
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: green;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 3px;
+  position: relative;
+  z-index: 99;
+  transition: all 0.3s ease;
+}
+.container .outer-tab label:hover{
+  background: rgb(16, 165, 16);
+}
+.outer-tab input:checked ~ label,
+.inner-tab input:checked ~ label{
+  border-radius: 3px 3px 0 0;
+  background: rgb(16, 165, 16);
+}
+.container label span{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-shadow: 0 -1px 1px green;
+}
+.container .inner-tab label span{
+  font-size: 17px;
+}
+.outer-tab label .icon{
+  position: relative;
+  height: 30px;
+  width: 30px;
+  font-size: 15px;
+  color: green;
+  display: block;
+  background: #fff;
+  border-radius: 50%;
+  text-shadow: 0 -1px 1px green;
+}
+.container .inner-tab label .icon{
+  height: 27px;
+  width: 27px;
+}
+.outer-tab label .icon i{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.outer-tab input:checked ~ label .icon i:before,
+.inner-tab input:checked ~ label .icon i:before{
+  content: '\f068';
+}
+.container .outer-tab .content-wrapper,
+.container .inner-tab .sub-content{
+  max-height: 0px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 0 0 3px 3px;
+  transition: all 0.4s ease;
+}
+.outer-tab input:checked ~ .content-wrapper,
+.inner-tab input:checked ~ .sub-content{
+  max-height: 100vh;
+}
+.tab-3 input:checked ~ .content-wrapper{
+  padding: 15px 20px;
+}
+.outer-tab .content-wrapper p,
+.inner-tab .sub-content p{
+  padding: 15px 20px;
+  font-size: 16px;
+}
+.outer-tab .content-wrapper h2,
+.inner-tab .sub-content h2{
+  padding: 0 20px;
+  
+}
+.inner-tab .sub-content p{
+  font-size: 15px;
+}
+input[type="radio"],
+input[type="checkbox"]{
+  display: none;
+}
